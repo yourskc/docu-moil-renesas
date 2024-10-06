@@ -2,7 +2,20 @@
 sidebar_position: 1
 ---
 
-# Indroduction
+# Introduction
+
+The official website of Renesas RZ/G2L where you can find the related documents is as below,
+
+Click [here](https://www.renesas.com/en/products/microcontrollers-microprocessors/rz-mpus/rzg2l-general-purpose-mpu-dual-core-arm-cortex-a55-cpus-and-single-core-cortex-m33-cpu-3d-graphics-and)
+
+Among all of the documents in the above website, the most important is [Linux Start-up Guide](https://www.renesas.com/en/document/gde/smarc-evk-rzg2l-rzg2lc-rzg2ul-linux-start-guide-rev104?r=1467981)
+
+You can follow the above document, or, below is a quick and concise guide for your reference.
+
+
+
+
+ 
 
 Add **Markdown or React** files to `src/pages` to create a **standalone page**:
 
