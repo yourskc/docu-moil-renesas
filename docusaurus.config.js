@@ -20,7 +20,7 @@ const config = {
 
   // GitHub pages deployment config.
   // If you aren't using GitHub pages, you don't need these.
-  organizationName: 'facebook', // Usually your GitHub org/user name.
+  organizationName: 'MOIL', // Usually your GitHub org/user name.
   projectName: 'docu-moil-renesas', // Usually your repo name.
 
   onBrokenLinks: 'throw',
@@ -31,7 +31,12 @@ const config = {
   // may want to replace "en" with "zh-Hans".
   i18n: {
     defaultLocale: 'en',
-    locales: ['en'],
+    locales: ['en', 'zh'],
+    localeConfigs: {
+      zh: {
+        htmlLang: 'zh-Hant',
+      },
+    },    
   },
 
   presets: [
@@ -92,6 +97,10 @@ const config = {
             label: 'GitHub',
             position: 'right',
           },
+          {
+            type: 'localeDropdown',
+            position: 'left',
+          },          
         ],
       },
       footer: {
