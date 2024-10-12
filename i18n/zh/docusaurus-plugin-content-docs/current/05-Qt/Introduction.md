@@ -68,7 +68,7 @@ sudo sh ./poky-glibc-x86_64-core-image-weston-sdk-aarch64-toolchain-3.1.26.sh
 
 :::
 
-在執行 Qt Creator 之前, 需要設定環境變數 
+在執行 Qt Creator 之前, 需要設定環境變數, 以便在之後的編譯動作中找到跨平台的函式庫
 
 ```
 unset LD_LIBRARY_PATH
@@ -83,7 +83,7 @@ cd ~/Qt5.6.3/Tools/QtCreator/bin/
 
 選取功能表 Tools/ External/ Configure 
 
-左側選取 Devices 右側輸入RZ/G2L 的 IP, 
+左側選取 Devices 右側輸入RZ/G2L 的 IP, 此時 RZ/G2L 須處於開機狀態, 點選右側 Test 連線看看是否成功
 
 
 
