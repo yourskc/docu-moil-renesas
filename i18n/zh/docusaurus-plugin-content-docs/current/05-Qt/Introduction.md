@@ -86,10 +86,28 @@ cd ~/Qt5.6.3/Tools/QtCreator/bin/
 左側選取 Devices 右側輸入RZ/G2L 的 IP, 此時 RZ/G2L 須處於開機狀態, 點選右側 Test 連線看看是否成功
 
 
+![img](/img/Qt563_Devices.png)
 
 
+![img](/img/Qt563_Kits.png)
 
-Create a file at `src/pages/my-react-page.js`:
+
+Renesas 板子用yocto 編譯的 image 已經包含ssh 連線功能. 因為新版的 openssh 的 ssh client 預設會禁用 ssh-rsa 算法 如果 如果 ssh 連線出現問題, 可以在指令中加上參數, 例如
+
+```
+ssh -v -oHostKeyAlgorithms=+ssh-rsa root@192.168.0.216
+```
+
+或是編輯 ~/.ssh/config, 加入以下內容
+
+```
+Host *
+ ServerAliveInterval 10
+ HostKeyAlgorithms +ssh-rs
+ PubkeyAcceptedKeyTypes +ssh-rsa
+```
+
+
 
 ```jsx title="src/pages/my-react-page.js"
 import React from 'react';
