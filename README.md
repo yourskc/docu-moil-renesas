@@ -53,6 +53,36 @@ $ npm run build
 
 - Markdown 文件所用到的圖檔或其他附加檔案, 放在 /static 目錄下, 在文件中有兩種方式引用, 例如把圖檔 image.png 放在 /static/img/ 目錄下, 第二種 Html 方式可以指定圖片顯示大小, 但必須在前面加上 baseUrl ( 在 docusaurus.config.js 中定義 )
 
+**標題**
+
+```
+#   大標題
+##  中標題
+### 小標題
+```
+
+**粗體**
+
+\*\*XXX\*\*
+
+**斜體**
+
+\*X\*
+
+or
+
+\_X\_
+
+**程式段落**
+
+\```
+
+Program 
+
+\```
+
+**圖片**
+
 ```
 ![img](/img/image.png)
 
@@ -61,3 +91,12 @@ or
 <img src="/docu-moil-renesas/img/image.png" width="800" />
 ```
 
+**Youtube影片**
+
+```
+[![Demo](https://img.youtube.com/vi/xxxxxx/0.jpg)](https://www.youtube.com/watch?v=xxxxxx)
+```
+
+**Markdown 線上編輯測試**
+
+https://stackedit.io/app#

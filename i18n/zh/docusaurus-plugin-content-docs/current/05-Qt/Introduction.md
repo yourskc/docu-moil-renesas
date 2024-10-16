@@ -2,7 +2,7 @@
 sidebar_position: 1
 ---
 
-# 建立 Renesas RZ/G2L 跨平台 Qt 開發環境
+# Qt 跨平台開發環境
 
 ## 目的 
 
@@ -23,10 +23,12 @@ sidebar_position: 1
 
 ## 1. Ubuntu 22.04 環境準備
 
-- 本機 Ubuntu 22.04 
-- 安裝 Docker  
-- Docker Container - Ubuntu 20.04 
-- Yocto 編譯環境
+以下是我們進行的步驟, 
+
+- Ubuntu 22.04 
+- Docker  
+- 建立一個 Docker Container - Ubuntu 20.04 
+- 準備 Yocto 編譯環境
 - 下載 Renesas RZ/G2L BSP 
 
 請先參考以下 Renesas 官方文件, 建立 Docker container 以編譯 Yocto project
@@ -48,15 +50,22 @@ sidebar_position: 1
 
 於 Docker ubuntu 20.04 container 中編譯, 編譯命令如下, 請注意後面加上 '-c polulate_sdk'
 
+```
 `MACHINE=smarc-rzg2l bitbake core-image-qt -c populate_sdk`
+```
 
 編譯完成之後, 所產生可供執行安裝 Script 位於
 
+```
 `<work_dir>/build/tmp/deploy/sdk/poky-glibc-x86_64-core-image-qt-aarch64-smarc-rzg2l-toolchain-3.1.26.sh`
+```
 
-可以在本機 (ubuntu 22.04 ) 中執行此安裝檔案 ( 先以滑鼠點擊右鍵後勾選 `Permission/ Allow executing file as program` 再執行 ）
+先以滑鼠點擊右鍵後勾選 `Permission/ Allow executing file as program`
+可以在本機 (ubuntu 22.04 ) 下執行此安裝檔案 
 
+```
 sudo sh ./poky-glibc-x86_64-core-image-weston-sdk-aarch64-toolchain-3.1.26.sh
+```
 
 安裝完成之後, 預設所安裝的檔案位於以下目錄
 
@@ -151,25 +160,29 @@ cmake :
 
 上述設定完成後, 必須在 Kits 下確認此編譯設定的圖示旁邊無驚嘆號, 否則需要再檢查一下有無錯誤
 
-**編譯與執行**
+## 4. 建立專案
 
+我們要開始建立專案, 可以從範例練習或是建立空白專案, 
+
+**範例**
 
 Qt Creator 左側點選 Welcome, 選取 Examples
 可以開啟範例專案, 開啟現有專案, 或是自行建立空白專案.
 
-如果要自行建立空白專案, 
+**建立空白專案** 
 
-File/ New File or Project/ 
+功能表中選取 ```File/ New File or Project/``` 
 
-選取 "Application"/ "Qt Quick Control Application"
+選取 ```"Application"/ "Qt Quick Control Application"```
 
-輸入專案名稱 例如 ex01
+輸入專案名稱 例如 ```ex01```
 
-在 "Kit" 選取畫面, 選取 "Desktop Qt 5.6.3 GCC 64bit"
+在 "Kit" 選取畫面, 先選取 "Desktop Qt 5.6.3 GCC 64bit"
 
 按左下角 或 F5 或 Ctrl-R 執行
 
-程式執行後, 顯示以下畫面
+因為目前使用 Desktop 的編譯工具程式庫, 可以在本機執行, 
+程式執行後, 會顯示以下畫面
 
 ![img](/img/Qt563_ex01.png)
 
@@ -177,21 +190,24 @@ File/ New File or Project/
 
 原始專案同一層的另一個目錄下, 名稱為
 
-/build-ex01-Desktop_Qt_5_6_3_GCC_64bit-Debug 
+```/build-ex01-Desktop_Qt_5_6_3_GCC_64bit-Debug ```
 
-其中的 ex01 為執行檔, 可以直接執行
+其中的 ex01 為執行檔
 
 以上流程, 代表開發環境已經完整建立.
-接下來請修改程式, 例如加入新的 control 元件（ 例如 button), 
-軟體開發的流程, 包含程式的修改及測試. 請查詢並學習 Qt 程式開發技巧.
+之後可以一直重複上述流程以進行軟體開發的工作. 
 
-必須學習的主題如下
+建議可以開始修改程式, 例如加入新的 control 元件（ 例如 button), 
+熟悉程式的修改及測試. 於網路上搜尋Qt 開發相關知識, 以學習 Qt 程式開發技巧.
+
+可以從以下主題如下
 
 - QML
 - Qt Quick
 - Qt Quick Controls
 
-**編譯為 Renesas RZ/G2L 執行檔**
+
+## 4. 編譯 RZ/G2L 執行檔
 
 我們程式開發到一定階段之後, 想要編譯為 Renesas RZ/G2L
 上的執行檔案, 
@@ -229,6 +245,16 @@ Host *
  PubkeyAcceptedKeyTypes +ssh-rsa
 ```
 
+## 5. 咖啡機範例
+
+
+**下載咖啡機範例**
+
+```
+git clone https://github.com/yourskc/moil_coffee.git
+```
+
+請參考前述流程分別在 Ubuntu 22.04 及 
 
 
 
