@@ -1,9 +1,11 @@
-# Website
+# 文件網站架設
 
 本網站以 [Docusaurus](https://docusaurus.io/) 建立.
 可以在 Ubuntu 22.04 下或是在 Windows 11 下編修網站內容.
 
-本網站
+本網站發布於以下位址 :
+
+http://140.112.12.82/docu-moil-renesas
 
 
 ### 安裝
@@ -14,36 +16,34 @@ $ git clone https://github.com/yourskc/docu-moil-renesas.git
 $ npm install
 ```
 
-### Local Development
-
-```
-$ npm run start
-```
-
-This command starts a local development server and opens up a browser window. Most changes are reflected live without having to restart the server.
-
-or
+### 本機開發環境
 
 ```
 $ npm run serve
 ```
 
-### Build
+將開啟 Chrome 瀏覽器於以下位址 : 
+
+http://localhost:3000/docu-moil-renesas/
+
+### 編譯 ( Build )
 
 ```
 $ npm run build
 ```
 
-This command generates static content into the `build` directory and can be served using any static contents hosting service.
+產生網站內容到 /build 目錄
 
 
-### Deploy
+### 發布 ( Deploy )
 
 將 /build 目錄 copy 或 上傳到網站即可
 
-目前的設定是放在網站的 docu-moil-renesas 目錄下
+目前的設定是發布於網站的 /docu-moil-renesas 目錄下
 
-所以從外面用瀏覽器連線網址為 http://ip/docu-moil-renesas
+例如發布到 http://140.112.12.82
+
+從外面用瀏覽器連線網址為 http://140.112.12.82/docu-moil-renesas
 
 ### Markdown
 
@@ -56,6 +56,8 @@ This command generates static content into the `build` directory and can be serv
 ```
 ![img](/img/image.png)
 
-<img src="/docu-moil-renesas/img/image.png" width="800px">
+or
+
+<img src="/docu-moil-renesas/img/image.png" width="800" />
 ```
 
