@@ -8,7 +8,9 @@
 http://140.112.12.82/docu-moil-renesas
 
 
-### 安裝
+### 下載及安裝
+
+系統需先安裝 nodejs
 
 ```
 $ git clone https://github.com/yourskc/docu-moil-renesas.git
@@ -16,7 +18,20 @@ $ git clone https://github.com/yourskc/docu-moil-renesas.git
 $ npm install
 ```
 
+### 編輯
+
+建議安裝 Visual Studio Code
+
+在目錄下執行 
+```
+code .
+```
+
 ### 本機開發環境
+
+開啟終端機, 切換到專案目錄下
+
+執行
 
 ```
 $ npm run serve
@@ -28,12 +43,19 @@ http://localhost:3000/docu-moil-renesas/
 
 ### 編譯 ( Build )
 
+在 VS code 中, 
+
+下方開啟終端機 (View/Terminal), 執行以下命令, 重新編譯
+
 ```
 $ npm run build
 ```
 
-產生網站內容到 /build 目錄
+以上命令將產生網站內容到 /build 目錄
 
+可以再次 Refresh 瀏覽器檢視
+
+建議可以先壓縮, 傳送到發布目標網站上, 解壓縮即可
 
 ### 發布 ( Deploy )
 

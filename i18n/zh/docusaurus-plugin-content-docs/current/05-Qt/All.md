@@ -1,10 +1,10 @@
 ---
-sidebar_position: 1
+sidebar_position: 8
 ---
 
-# Qt 跨平台開發環境
+# 5. Qt 跨平台開發環境
 
-## 目的 
+## 5-1 目的 
 
 以 PC/ Ubuntu 22.04 為開發環境, 執行 Qt Crreator 等開發工具, 建立並編譯成為 Aarch64 的應用程式可執行檔, 並傳送到 Renesas RZ/G2L 上執行
 
@@ -21,7 +21,7 @@ sidebar_position: 1
 以下我們將說明在 Ubuntu 22.04 環境下建立 Qt 開發環境, 而 Windows 11 的部份
 比較簡單, 請自行下載及安裝 Qt5.6.3 即可.
 
-## 1. Ubuntu 22.04 環境準備
+## 5-2. 環境準備
 
 以下是我們進行的步驟, 
 
@@ -41,7 +41,7 @@ sidebar_position: 1
 `MACHINE=smarc-rzg2l bitbake core-image-qt`
 
 
-## 2. 準備開發工具庫( ToolChain )
+## 5-3. 準備開發工具庫( ToolChain )
 
 系統中安裝工具庫的目的, 是要讓 Qt 可以在 PC 的環境中, 編譯出 Renesas 平台
 的執行檔. 先準備好開發工具庫, 以便在之後的 Qt Creator 中設定工具庫的位置.
@@ -73,7 +73,7 @@ sudo sh ./poky-glibc-x86_64-core-image-weston-sdk-aarch64-toolchain-3.1.26.sh
 
 此目錄下工具將應用於之後 Qt Creator 的設定過程. 
 
-## 3. 安裝, 執行及設定 Qt Creator
+## 5-4. 安裝及設定 Qt Creator
 
 請下載安裝 Qt Creator 到 Ubuntu 22.04 下, 以下有兩個版本, 
 我們主要使用 5.6.3, 可以建立及編譯與 Renesas RZ/G2L 環境完全相容
@@ -160,7 +160,7 @@ cmake :
 
 上述設定完成後, 必須在 Kits 下確認此編譯設定的圖示旁邊無驚嘆號, 否則需要再檢查一下有無錯誤
 
-## 4. 建立專案
+## 5-5. 在 Ubuntu 22.04 上建立及編譯 Qt 專案
 
 我們要開始建立專案, 可以從範例練習或是建立空白專案, 
 
@@ -200,14 +200,23 @@ Qt Creator 左側點選 Welcome, 選取 Examples
 建議可以開始修改程式, 例如加入新的 control 元件（ 例如 button), 
 熟悉程式的修改及測試. 於網路上搜尋Qt 開發相關知識, 以學習 Qt 程式開發技巧.
 
-可以從以下主題如下
+可以從以下主題開始學習
 
 - QML
+
+QML (Qt Markup Language) 是基於JavaScript 的程式語言, 用於設計圖形使用者介面為主的應用程式.QML 主要用於行動應用程式，注重觸控輸入和使用者體驗.
+
 - Qt Quick
+
+有別於 Qt Wedget, 
+Qt Quick 是 QML 的 Class 和 Functions 的函數庫, 以 QML 語言來開發圖形介面.
+
 - Qt Quick Controls
 
+是 Qt 框架中的介面模組, 提供了一套視覺化的使用者控制元件. 包含了如按鍵, 文字輸入框, 滑桿等等. 
 
-## 4. 編譯 RZ/G2L 執行檔
+
+## 5-6. 編譯 RZ/G2L 執行檔
 
 我們程式開發到一定階段之後, 想要編譯為 Renesas RZ/G2L
 上的執行檔案, 
@@ -245,17 +254,27 @@ Host *
  PubkeyAcceptedKeyTypes +ssh-rsa
 ```
 
-## 5. 咖啡機範例
-
+## 5-7. 咖啡機範例
 
 **下載咖啡機範例**
 
 ```
 git clone https://github.com/yourskc/moil_coffee.git
 ```
-
-請參考前述流程分別在 Ubuntu 22.04 及 
-
+本範例取自 Qt5.12.10, 經過修改, 可以在 Qt5.6.3 執行
 
 
 
+**編譯與執行**
+
+請參考前述流程分別在 Ubuntu 22.04 編譯執行
+
+**在 RX/G2L 執行** 
+
+請參考本章說明, 編譯成 RZ/G2L 可以執行的版本, 傳送到 RZ/G2L 上執行看看
+
+除了用滑鼠操作, 可以接上觸控螢幕操作
+
+影片連結如下
+
+請參考此專案的素材檔案使用, 
